@@ -1,0 +1,10 @@
+<use name="TopLJets2015/TopAnalysis"/>
+<environment>
+  <bin name="analysisWrapper"       file="analysisWrapper.cc"></bin>
+  <bin name="runTMVAClassification" file="runTMVAClassification.cc"></bin>
+  <bin name="runFRcalculation"      file="runFRcalculation.cc"></bin>
+  <bin name="mergePileupProtons"            file="mergePileupProtons.cc"></bin>
+  <bin name="analyticmattfit_xi_errors"     file="analyticmattfit_xi_errors.cc"></bin>
+  <bin name="TMVAClassificationApplication" file="TMVAClassificationApplication.cc"></bin>
+</environment>
+<Flags CXXFLAGS="-g"/>

@@ -1,0 +1,221 @@
+JEC tag:  Summer19UL17_V5 to be read from jec_MC.db
+JER tag:  Summer19UL17_JRV2 to be read from jer_MC.db
+Muon corrections to be read from muoncorr_db.txt
+q/g discriminator to be read from qg_db.db
+Global tag is 106X_mc2017_realistic_v7
+[customizeJetTools] jec_MC.db Summer19UL17_V5_MC AK4PFchs ['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual']
+ ##################################################################### 
+ # WARNING: the module CondCore.DBCommon.CondDBSetup is deprecated.  # 
+ # Please import CondCore.CondDB.CondDB_cfi                          # 
+ ##################################################################### 
+Processing cms.untracked.vstring('/store/mc/RunIISummer19UL17MiniAOD/TTJets_TuneCP5_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/270000/2927EC69-BA37-F64D-8057-040C81E11C06.root')
+MiniAnalyzer configuration is as follows:
+	 save tree= True , using ListVars='ttbar_sys'
+	 MC, set runNumber =  cms.untracked.int32(297050)
+	 Using 2017 ttbar triggers/jet ids
+INFO	 setting up special settings for exclusive ttbar analysis, jetIdToUse = looseID
+cms.Schedule(*[ process.egammaPostReco, process.custom_jec, process.custom_met, process.ana ])
+
+DEBUG 2021-05-03 12:15:55.540 UTC: 	 CRAB Client version: v3.210323
+DEBUG 2021-05-03 12:15:55.540 UTC: 	 Running on: Linux lxplus7102.cern.ch 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Apr 8 19:51:47 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-05-03 12:15:55.540 UTC: 	 Executing command: 'submit'
+DEBUG 2021-05-03 12:15:55.540 UTC: 	 Found CRAB cache file /afs/cern.ch/user/p/pchatagn/.crab3
+INFO 2021-05-03 12:15:55.541 UTC: 	 Will use CRAB configuration file grid/SignalDiffractiveTTbar_cfg.py
+DEBUG 2021-05-03 12:15:55.542 UTC: 	 Loading CRAB configuration file.
+DEBUG 2021-05-03 12:15:55.652 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2021-05-03 12:15:55.682 UTC: 	 Checking credentials
+DEBUG 2021-05-03 12:15:55.683 UTC: 	 Found proxy file /tmp/x509up_u140433
+DEBUG 2021-05-03 12:15:55.683 UTC: 	 Getting proxy life time left
+DEBUG 2021-05-03 12:15:56.491 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u140433 -timeleft
+ output : 614582
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-03 12:15:57.301 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u140433 -actimeleft
+ output : 614580
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-03 12:15:57.302 UTC: 	 Proxy lifetime 614582 secs is different from voms extension lifetime 614580 secs for proxy: /tmp/x509up_u140433
+DEBUG 2021-05-03 12:15:57.302 UTC: 	 Proxy valid for 170:43:00 hours
+DEBUG 2021-05-03 12:15:58.117 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u140433 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-03 12:15:58.203 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2021-05-03 12:15:59.034 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u140433 -identity
+ output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pchatagn/CN=851916/CN=Pierre Patrice Chatagnon
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-03 12:15:59.067 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-05-03 12:15:59.067 UTC: 	 using 7543e192279d5f0771e81bf73363b70a561cdefb as credential login name
+DEBUG 2021-05-03 12:15:59.475 UTC: 	 Executing : 
+ command : myproxy-info -l 7543e192279d5f0771e81bf73363b70a561cdefb -s myproxy.cern.ch
+ output : username: 7543e192279d5f0771e81bf73363b70a561cdefb
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pchatagn/CN=851916/CN=Pierre Patrice Chatagnon
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 718:43:12  (29.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-03 12:15:59.476 UTC: 	 Myproxy is valid: 2587392
+DEBUG 2021-05-03 12:15:59.476 UTC: 	 Retrieving username ...
+DEBUG 2021-05-03 12:15:59.477 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-05-03 12:16:00.322 UTC: 	 username is pchatagn
+DEBUG 2021-05-03 12:16:00.341 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-05-03 12:16:00.341 UTC: 	 using pchatagn_CRAB as credential login name
+DEBUG 2021-05-03 12:16:00.759 UTC: 	 Executing : 
+ command : myproxy-info -l pchatagn_CRAB -s myproxy.cern.ch
+ output : username: pchatagn_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pchatagn/CN=851916/CN=Pierre Patrice Chatagnon
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 718:43:24  (29.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-03 12:16:00.759 UTC: 	 Myproxy is valid: 2587404
+DEBUG 2021-05-03 12:16:00.760 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 7543e192279d5f0771e81bf73363b70a561cdefb  - validity: 29 days, 22:43:12
+  Credential exists on myproxy: username: pchatagn_CRAB  - validity: 29 days, 22:43:24
+DEBUG 2021-05-03 12:16:00.760 UTC: 	 Command use: submit
+DEBUG 2021-05-03 12:16:00.760 UTC: 	 Options use: ['-c', 'grid/SignalDiffractiveTTbar_cfg.py']
+DEBUG 2021-05-03 12:16:00.874 UTC: 	 CRABClient version: v3.210323
+DEBUG 2021-05-03 12:16:00.874 UTC: 	 Instance is prod
+DEBUG 2021-05-03 12:16:00.874 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-05-03 12:16:00.874 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2021-05-03 12:16:00.874 UTC: 	 Started submission
+DEBUG 2021-05-03 12:16:00.874 UTC: 	 Working on /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/grid/crab_SignalDiffractiveTTbar
+DEBUG 2021-05-03 12:16:01.010 UTC: 	 Loading required information from the environment
+DEBUG 2021-05-03 12:16:01.011 UTC: 	 Found CMSSW_10_6_24 for slc7_amd64_gcc820 with base /eos/home-p/pchatagn/CMSSW_10_6_24
+DEBUG 2021-05-03 12:16:01.011 UTC: 	 Loading required information from the environment
+DEBUG 2021-05-03 12:16:01.011 UTC: 	 Found CMSSW_10_6_24 for slc7_amd64_gcc820 with base /eos/home-p/pchatagn/CMSSW_10_6_24
+DEBUG 2021-05-03 12:16:01.011 UTC: 	 UNIQUE NAME: tarUUID 794ce139-86fc-40a4-8a34-eb16430e4e53 
+DEBUG 2021-05-03 12:16:01.011 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferOutputs = True
+config.General.workArea = 'grid'
+config.General.requestName = 'SignalDiffractiveTTbar'
+config.section_('JobType')
+config.JobType.inputFiles = ['jec_MC.db', 'jer_MC.db', 'muoncorr_db.txt', 'jecUncSources.txt', 'qg_db.db']
+config.JobType.maxMemoryMB = 2500
+config.JobType.disableAutomaticOutputCollection = False
+config.JobType.pyCfgParams = ['runOnData=False', 'era=era2017', 'ListVars=ttbar_sys']
+config.JobType.pluginName = 'Analysis'
+config.JobType.allowUndistributedCMSSW = True
+config.JobType.psetName = '/eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/test/runMiniAnalyzer_cfg.py'
+config.JobType.maxJobRuntimeMin = 1200
+config.section_('Data')
+config.Data.inputDataset = '/eos/user/p/pchatagn/OutputDirFPMC/MINIAOD/exclu_ttbar_lephad_QCD'
+config.Data.publication = False
+config.Data.unitsPerJob = 4
+config.Data.ignoreLocality = False
+config.Data.inputDBS = 'global'
+config.Data.splitting = 'FileBased'
+config.Data.outLFNDirBase = '/eos/user/p/pchatagn/OutputNtuplizer/813afaa/'
+config.section_('Site')
+config.Site.storageSite = 'T2_CH_CERN'
+
+DEBUG 2021-05-03 12:16:01.011 UTC: 	 self.config.JobType.psetName: /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/test/runMiniAnalyzer_cfg.py
+INFO 2021-05-03 12:16:01.014 UTC: 	 Importing CMSSW configuration /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/test/runMiniAnalyzer_cfg.py
+DEBUG 2021-05-03 12:16:01.014 UTC: 	 Additional parameters for the CMSSW configuration are: ['runOnData=False', 'era=era2017', 'ListVars=ttbar_sys']
+INFO 2021-05-03 12:16:04.574 UTC: 	 Finished importing CMSSW configuration /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/test/runMiniAnalyzer_cfg.py
+DEBUG 2021-05-03 12:16:04.575 UTC: 	 Writing CMSSW configuration to /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/grid/crab_SignalDiffractiveTTbar/inputs/PSet.py
+DEBUG 2021-05-03 12:16:05.084 UTC: 	 The following EDM output files will be collected: []
+DEBUG 2021-05-03 12:16:05.084 UTC: 	 The following TFile output files will be collected: ['MiniEvents.root']
+DEBUG 2021-05-03 12:16:05.084 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2021-05-03 12:16:05.084 UTC: 	 Loading required information from the environment
+DEBUG 2021-05-03 12:16:05.085 UTC: 	 Found CMSSW_10_6_24 for slc7_amd64_gcc820 with base /eos/home-p/pchatagn/CMSSW_10_6_24
+DEBUG 2021-05-03 12:16:05.085 UTC: 	 Making tarball in /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/grid/crab_SignalDiffractiveTTbar/inputs/794ce139-86fc-40a4-8a34-eb16430e4e53default.tgz
+DEBUG 2021-05-03 12:16:05.088 UTC: 	 Checking directory /eos/home-p/pchatagn/CMSSW_10_6_24/lib
+DEBUG 2021-05-03 12:16:05.088 UTC: 	 Adding directory /eos/home-p/pchatagn/CMSSW_10_6_24/lib to tarball
+DEBUG 2021-05-03 12:16:11.005 UTC: 	 Checking directory /eos/home-p/pchatagn/CMSSW_10_6_24/biglib
+DEBUG 2021-05-03 12:16:11.005 UTC: 	 Adding directory /eos/home-p/pchatagn/CMSSW_10_6_24/biglib to tarball
+DEBUG 2021-05-03 12:16:11.013 UTC: 	 Checking directory /eos/home-p/pchatagn/CMSSW_10_6_24/module
+DEBUG 2021-05-03 12:16:11.395 UTC: 	 Adding data directory /eos/home-p/pchatagn/CMSSW_10_6_24/src/EgammaAnalysis/ElectronTools/data to tarball
+DEBUG 2021-05-03 12:16:13.418 UTC: 	 Adding data directory /eos/home-p/pchatagn/CMSSW_10_6_24/src/EgammaAnalysis/ElectronTools/interface to tarball
+DEBUG 2021-05-03 12:16:13.624 UTC: 	 Adding data directory /eos/home-p/pchatagn/CMSSW_10_6_24/src/RecoEgamma/EgammaTools/data to tarball
+DEBUG 2021-05-03 12:16:13.647 UTC: 	 Adding data directory /eos/home-p/pchatagn/CMSSW_10_6_24/src/RecoEgamma/EgammaTools/interface to tarball
+DEBUG 2021-05-03 12:16:13.895 UTC: 	 Adding data directory /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/data to tarball
+DEBUG 2021-05-03 12:16:26.363 UTC: 	 Adding data directory /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/interface to tarball
+DEBUG 2021-05-03 12:16:26.668 UTC: 	 Adding data directory /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopQuarkAnalysis/BFragmentationAnalyzer/data to tarball
+DEBUG 2021-05-03 12:16:26.679 UTC: 	 Adding data directory /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopQuarkAnalysis/BFragmentationAnalyzer/interface to tarball
+DEBUG 2021-05-03 12:16:26.714 UTC: 	 Adding data directory /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopQuarkAnalysis/TopTools/interface to tarball
+DEBUG 2021-05-03 12:16:26.765 UTC: 	 Adding file jec_MC.db to tarball
+DEBUG 2021-05-03 12:16:26.994 UTC: 	 Adding file jer_MC.db to tarball
+DEBUG 2021-05-03 12:16:27.002 UTC: 	 Adding file muoncorr_db.txt to tarball
+DEBUG 2021-05-03 12:16:27.381 UTC: 	 Adding file jecUncSources.txt to tarball
+DEBUG 2021-05-03 12:16:27.942 UTC: 	 Adding file qg_db.db to tarball
+DEBUG 2021-05-03 12:16:28.862 UTC: 	 Uploading archive /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/grid/crab_SignalDiffractiveTTbar/inputs/794ce139-86fc-40a4-8a34-eb16430e4e53default.tgz (36 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch:8443/crabcache
+DEBUG 2021-05-03 12:16:57.333 UTC: 	 Loading required information from the environment
+DEBUG 2021-05-03 12:16:57.334 UTC: 	 Found CMSSW_10_6_24 for slc7_amd64_gcc820 with base /eos/home-p/pchatagn/CMSSW_10_6_24
+DEBUG 2021-05-03 12:16:57.334 UTC: 	 Making tarball in /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/grid/crab_SignalDiffractiveTTbar/inputs/debugFiles.tgz
+DEBUG 2021-05-03 12:16:57.360 UTC: 	 Uploading archive /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/grid/crab_SignalDiffractiveTTbar/inputs/debugFiles.tgz (4 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch:8443/crabcache
+DEBUG 2021-05-03 12:16:57.413 UTC: 	 Result uploading input files: 5ea8afe1eb3adafc95e8c38c6a364991cb5f70bad8ad510a0281c14945e47bc9.tar.gz 
+INFO 2021-05-03 12:16:57.413 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2021-05-03 12:16:57.414 UTC: 	 Submitting {'maxjobruntime': 1200, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 0, 'useparent': 0, 'asyncdest': 'T2_CH_CERN', 'algoargs': 4, 'cachefilename': '5ea8afe1eb3adafc95e8c38c6a364991cb5f70bad8ad510a0281c14945e47bc9.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2500, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_10_6_24', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/eos/user/p/pchatagn/OutputDirFPMC/MINIAOD/exclu_ttbar_lephad_QCD', 'lfn': '/eos/user/p/pchatagn/OutputNtuplizer/813afaa/', 'dryrun': 0, 'workflow': 'crab_SignalDiffractiveTTbar', 'cacheurl': u'https://cmsweb.cern.ch:8443/crabcache', 'nonprodsw': 1, 'tfileoutfiles': ['MiniEvents.root'], 'oneEventMode': 0, 'debugfilename': '52e81b0d9e94146b7076293dcafca51efec985d5d3804307a4bffef614c97f5c.tar.gz', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc7_amd64_gcc820', 'totalunits': 0, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': ''} 
+DEBUG 2021-05-03 12:16:57.414 UTC: 	 Encoded submit request: maxjobruntime=1200&ignorelocality=0&savelogsflag=0&useparent=0&asyncdest=T2_CH_CERN&algoargs=4&cachefilename=5ea8afe1eb3adafc95e8c38c6a364991cb5f70bad8ad510a0281c14945e47bc9.tar.gz&numcores=1&generator=pythia&maxmemory=2500&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_6_24&primarydataset=&inputdata=%2Feos%2Fuser%2Fp%2Fpchatagn%2FOutputDirFPMC%2FMINIAOD%2Fexclu_ttbar_lephad_QCD&lfn=%2Feos%2Fuser%2Fp%2Fpchatagn%2FOutputNtuplizer%2F813afaa%2F&dryrun=0&workflow=crab_SignalDiffractiveTTbar&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%3A8443%2Fcrabcache&nonprodsw=1&oneEventMode=0&debugfilename=52e81b0d9e94146b7076293dcafca51efec985d5d3804307a4bffef614c97f5c.tar.gz&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc820&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&tfileoutfiles=MiniEvents.root
+ERROR 2021-05-03 12:16:57.505 UTC: 	 Fatal error trying to connect to https://cmsweb.cern.ch:8443/crabserver/prod/workflow using maxjobruntime=1200&ignorelocality=0&savelogsflag=0&useparent=0&asyncdest=T2_CH_CERN&algoargs=4&cachefilename=5ea8afe1eb3adafc95e8c38c6a364991cb5f70bad8ad510a0281c14945e47bc9.tar.gz&numcores=1&generator=pythia&maxmemory=2500&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_6_24&primarydataset=&inputdata=%2Feos%2Fuser%2Fp%2Fpchatagn%2FOutputDirFPMC%2FMINIAOD%2Fexclu_ttbar_lephad_QCD&lfn=%2Feos%2Fuser%2Fp%2Fpchatagn%2FOutputNtuplizer%2F813afaa%2F&dryrun=0&workflow=crab_SignalDiffractiveTTbar&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%3A8443%2Fcrabcache&nonprodsw=1&oneEventMode=0&debugfilename=52e81b0d9e94146b7076293dcafca51efec985d5d3804307a4bffef614c97f5c.tar.gz&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc820&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&tfileoutfiles=MiniEvents.root
+INFO 2021-05-03 12:16:57.506 UTC: 	 The server answered with an error.
+DEBUG 2021-05-03 12:16:57.506 UTC: 	 
+INFO 2021-05-03 12:16:57.506 UTC: 	 Server answered with: Invalid input parameter
+INFO 2021-05-03 12:16:57.506 UTC: 	 Reason is: Incorrect 'Data.outLFNDirBase' parameter
+INFO 2021-05-03 12:16:57.506 UTC: 	 Error Id: 6d89741757d40c7d53cddd337bf12cd5
+DEBUG 2021-05-03 12:16:57.507 UTC: 	 ERROR: Bad Request (400):  '<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <title>400 Bad Request</title>
+    <style type="text/css">
+    #powered_by {
+        margin-top: 20px;
+        border-top: 2px solid black;
+        font-style: italic;
+    }
+
+    #traceback {
+        color: red;
+    }
+    </style>
+</head>
+    <body>
+        <h2>400 Bad Request</h2>
+        <p>Invalid input parameter</p>
+        <pre id="traceback"></pre>
+    <div id="powered_by">
+      <span>
+        Powered by <a href="http://www.cherrypy.org">CherryPy 17.4.0</a>
+      </span>
+    </div>
+    </body>
+</html>
+'
+DEBUG 2021-05-03 12:16:57.507 UTC: 	 Command failed with URI: https://cmsweb.cern.ch:8443/crabserver/prod/workflow
+DEBUG 2021-05-03 12:16:57.507 UTC: 	      Input data: maxjobruntime=1200&ignorelocality=0&savelogsflag=0&useparent=0&asyncdest=T2_CH_CERN&algoargs=4&cachefilename=5ea8afe1eb3adafc95e8c38c6a364991cb5f70bad8ad510a0281c14945e47bc9.tar.gz&numcores=1&generator=pythia&maxmemory=2500&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_6_24&primarydataset=&inputdata=%2Feos%2Fuser%2Fp%2Fpchatagn%2FOutputDirFPMC%2FMINIAOD%2Fexclu_ttbar_lephad_QCD&lfn=%2Feos%2Fuser%2Fp%2Fpchatagn%2FOutputNtuplizer%2F813afaa%2F&dryrun=0&workflow=crab_SignalDiffractiveTTbar&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%3A8443%2Fcrabcache&nonprodsw=1&oneEventMode=0&debugfilename=52e81b0d9e94146b7076293dcafca51efec985d5d3804307a4bffef614c97f5c.tar.gz&saveoutput=1&publication=0&jobarch=slc7_amd64_gcc820&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&tfileoutfiles=MiniEvents.root
+DEBUG 2021-05-03 12:16:57.507 UTC: 	      Request headers: {'Content-Length': '733', 'X-Error-Http': '400', 'X-Rest-Time': '2938.986 us', 'Server': 'openresty/1.15.8.2', 'Connection': 'close', 'X-Error-Detail': 'Invalid input parameter', 'CMS-Server-Time': 'D=58818 t=1620044217443998', 'X-Rest-Status': '302', 'Date': 'Mon, 03 May 2021 12:16:57 GMT', 'Content-Type': 'text/html;charset=utf-8', 'X-Error-Info': "Incorrect 'lfn' parameter", 'X-Error-Id': '6d89741757d40c7d53cddd337bf12cd5'}
+ERROR 2021-05-03 12:16:57.507 UTC: 	 Caught HTTPException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210323.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210323.00/bin/crab", line 152, in __call__
+    self.cmd()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210323.00/lib/CRABClient/Commands/submit.py", line 128, in __call__
+    dictresult, status, reason = server.put(self.uri, data=self.configreq_encoded)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210323.00/lib/RESTInteractions.py", line 109, in put
+    return self.makeRequest(uri=uri, data=data, verb='PUT')
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210323.00/lib/RESTInteractions.py", line 147, in makeRequest
+    verbose=self['verbose'])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210323.00/lib/WMCore/Services/pycurl_manager.py", line 275, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch:8443/crabserver/prod/workflow, code=400, reason=Bad Request, headers={'Content-Length': '733', 'X-Error-Http': '400', 'X-Rest-Time': '2938.986 us', 'Server': 'openresty/1.15.8.2', 'Connection': 'close', 'X-Error-Detail': 'Invalid input parameter', 'CMS-Server-Time': 'D=58818 t=1620044217443998', 'X-Rest-Status': '302', 'Date': 'Mon, 03 May 2021 12:16:57 GMT', 'Content-Type': 'text/html;charset=utf-8', 'X-Error-Info': "Incorrect 'lfn' parameter", 'X-Error-Id': '6d89741757d40c7d53cddd337bf12cd5'}
+INFO 2021-05-03 12:16:57.537 UTC: 	 Log file is /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/grid/crab_SignalDiffractiveTTbar/crab.log
