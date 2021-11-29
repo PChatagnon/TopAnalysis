@@ -1,0 +1,12 @@
+<use name="TopLJets2015/TopAnalysis"/>
+<environment>
+  <bin name="analysisWrapper"       file="analysisWrapper.cc"></bin>
+  <bin name="runTMVAClassification" file="runTMVAClassification.cc"></bin>
+  <bin name="runFRcalculation"      file="runFRcalculation.cc"></bin>
+  <bin name="mergePileupProtons"            file="mergePileupProtons.cc"></bin>
+  <bin name="analyticmattfit_xi_errors"     file="analyticmattfit_xi_errors.cc"></bin>
+  <bin name="TMVAClassificationApplication" file="TMVAClassificationApplication.cc"></bin>
+  <bin name="post_process_diffractive_ttbar" file="post_process_diffractive_ttbar.cc"></bin>
+  <bin name="MixingProton" file="MixingProton.C"></bin>
+</environment>
+<Flags CXXFLAGS="-g"/>

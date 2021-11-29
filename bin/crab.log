@@ -1,0 +1,78 @@
+DEBUG 2021-09-13 13:22:58.722 UTC: 	 CRAB Client version: v3.210825
+DEBUG 2021-09-13 13:22:58.722 UTC: 	 Running on: Linux lxplus715.cern.ch 3.10.0-1160.36.2.el7.x86_64 #1 SMP Wed Jul 21 11:57:15 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-09-13 13:22:58.722 UTC: 	 Executing command: 'tasks'
+DEBUG 2021-09-13 13:22:58.723 UTC: 	 Found CRAB cache file /afs/cern.ch/user/p/pchatagn/.crab3
+DEBUG 2021-09-13 13:22:58.786 UTC: 	 Checking credentials
+DEBUG 2021-09-13 13:22:58.786 UTC: 	 Found proxy file /tmp/x509up_u140433
+DEBUG 2021-09-13 13:22:58.786 UTC: 	 Getting proxy life time left
+DEBUG 2021-09-13 13:22:59.800 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u140433 -timeleft
+ output : 600278
+
+ error: 
+ retcode : 0
+DEBUG 2021-09-13 13:23:00.710 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u140433 -actimeleft
+ output : 600276
+
+ error: 
+ retcode : 0
+DEBUG 2021-09-13 13:23:00.711 UTC: 	 Proxy lifetime 600278 secs is different from voms extension lifetime 600276 secs for proxy: /tmp/x509up_u140433
+DEBUG 2021-09-13 13:23:00.711 UTC: 	 Proxy valid for 166:44:36 hours
+DEBUG 2021-09-13 13:23:01.088 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2021-09-13 13:23:02.017 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u140433 -identity
+ output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pchatagn/CN=851916/CN=Pierre Patrice Chatagnon
+
+ error: 
+ retcode : 0
+DEBUG 2021-09-13 13:23:02.039 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-13 13:23:02.039 UTC: 	 using 7543e192279d5f0771e81bf73363b70a561cdefb as credential login name
+DEBUG 2021-09-13 13:23:02.647 UTC: 	 Executing : 
+ command : myproxy-info -l 7543e192279d5f0771e81bf73363b70a561cdefb -s myproxy.cern.ch
+ output : username: 7543e192279d5f0771e81bf73363b70a561cdefb
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pchatagn/CN=851916/CN=Pierre Patrice Chatagnon
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 714:44:46  (29.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-09-13 13:23:02.648 UTC: 	 Myproxy is valid: 2573086
+DEBUG 2021-09-13 13:23:02.648 UTC: 	 Retrieving username ...
+DEBUG 2021-09-13 13:23:02.648 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-09-13 13:23:03.566 UTC: 	 username is pchatagn
+DEBUG 2021-09-13 13:23:03.588 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-09-13 13:23:03.588 UTC: 	 using pchatagn_CRAB as credential login name
+DEBUG 2021-09-13 13:23:03.998 UTC: 	 Executing : 
+ command : myproxy-info -l pchatagn_CRAB -s myproxy.cern.ch
+ output : username: pchatagn_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pchatagn/CN=851916/CN=Pierre Patrice Chatagnon
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 714:44:57  (29.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-09-13 13:23:03.999 UTC: 	 Myproxy is valid: 2573097
+DEBUG 2021-09-13 13:23:03.999 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 7543e192279d5f0771e81bf73363b70a561cdefb  - validity: 29 days, 18:44:46
+  Credential exists on myproxy: username: pchatagn_CRAB  - validity: 29 days, 18:44:57
+DEBUG 2021-09-13 13:23:03.999 UTC: 	 Command use: tasks
+DEBUG 2021-09-13 13:23:03.999 UTC: 	 Options use: []
+DEBUG 2021-09-13 13:23:04.121 UTC: 	 CRABClient version: v3.210825
+DEBUG 2021-09-13 13:23:04.121 UTC: 	 Instance is prod
+DEBUG 2021-09-13 13:23:04.121 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-09-13 13:23:04.121 UTC: 	 Command api workflow
+INFO 2021-09-13 13:23:04.398 UTC: 	 
+List of tasks from 2021-08-14 until 2021-09-13
+INFO 2021-09-13 13:23:04.399 UTC: 	 Beware that STATUS here does not include information from grid jobs
+INFO 2021-09-13 13:23:04.399 UTC: 	 ================================================================================
+INFO 2021-09-13 13:23:04.399 UTC: 	 NAME								STATUS
+INFO 2021-09-13 13:23:04.399 UTC: 	 ================================================================================
+INFO 2021-09-13 13:23:04.399 UTC: 	 210913_080928:pchatagn_crab_Data13TeV_2017H_SingleMuon
+								SUBMITTED
+INFO 2021-09-13 13:23:04.399 UTC: 	 --------------------------------------------------------------------------------
+INFO 2021-09-13 13:23:04.399 UTC: 	 
+
+INFO 2021-09-13 13:23:04.425 UTC: 	 Log file is /eos/home-p/pchatagn/CMSSW_10_6_24/src/TopLJets2015/TopAnalysis/bin/crab.log
