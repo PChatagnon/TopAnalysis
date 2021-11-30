@@ -45,10 +45,29 @@ int Plot()
 	TTree *Signal_tree = (TTree*)Signal_file->Get("tree");
 	TTree *Data_tree = (TTree*)Data_file->Get("tree");
 	
-	std::vector<TString> labels {"xiDiff","maxEtaJets","minEtaJets","ttbar_m","ttbar_eta","ttbar_phi",
-	"p1_xi","p2_xi","nJets","nBjets","gen_ttbar_phi","acoplanarity",
-	"lightJet0_pt","lightJet0_eta","nvtx"};
-	//TString labels[nblabels] = {"maxEtaJets"};
+	
+	std::vector<vector<TString>> labels
+	{
+	{"xiDiff","#xi Diff.","no_arrow"},
+	{"maxEtaJets","Max. #eta Jets","arrow"},
+	{"minEtaJets","Min #eta Jets","arrow"},
+	{"ttbar_m","M_{t#bar{t}} (GeV)","no_arrow"},
+	{"ttbar_eta","#eta_{t#bar{t}}","arrow"},
+	{"ttbar_phi","#phi_{t#bar{t}}","no_arrow"},
+	{"p1_xi","#xi (P1/+z)","no_arrow"},
+	{"p2_xi","#xi (P2/-z)","no_arrow"},
+	{"nJets","Nb. Jets","no_arrow"},
+	{"nBjets","Nb. B jets","no_arrow"},
+	{"gen_ttbar_phi","gen_ttbar_phi","no_arrow"},
+	{"acoplanarity","Acoplanarity","no_arrow"},
+	{"lightJet0_pt","Leading light jet Pt (GeV)","no_arrow"},
+	{"lightJet0_eta","Leading light jet #eta","arrow"},
+	{"nvtx","Nb vertex","no_arrow"}
+	};
+	
+	
+	
+	
 	
 	
 	//Xsec BG
@@ -77,7 +96,14 @@ int Plot()
 	TString cut_string=cut.GetTitle();
 	
 	for(int i=0;i<labels.size();i++){
-	TString label = labels[i];//"maxEtaJets";
+	
+	//////////////////////////////////////////////////
+	//Set options for each label
+	TString label = labels[i][0];
+	TString xAxis_label = labels[i][1];
+	TString arrow_option = labels[i][2];
+	//////////////////////////////////////////////////
+	
 	float maximum = (Data_tree->GetMaximum(label));
 	float minimum = (Data_tree->GetMinimum(label));
 	int nBins = 25;
@@ -159,7 +185,8 @@ int Plot()
   	pad1->SetTicks(1,1);
   	
   	//pad1->SetLogy();
-  	hs->SetMaximum((Data_hist->GetMaximum())*1.5);//*20.);
+  	float max_display = (Data_hist->GetMaximum())*1.5;
+  	hs->SetMaximum(max_display);//*20.);
   	
   	
 	pad1->Draw();             // Draw the upper pad: pad1
@@ -223,8 +250,47 @@ int Plot()
 	Warning->Draw();
 	
 	t->DrawTextNDC(.5, .53, "Preliminary");
+	
+	//Add an arrow to indicate the intact proton in the case the option is selected
+	///////////////////////////////////////////////////////////////////////////////
+	if(arrow_option=="arrow"){
+		float x_min_plot = hs->GetXaxis()->GetXmin();
+		float x_max_plot = hs->GetXaxis()->GetXmax();
+	
+		float center_arrow_x = x_min_plot+ (x_max_plot-x_min_plot)*0.8;
+		float center_arrow_y = max_display*0.65;
+		float size_x_arrow = (x_max_plot-x_min_plot)*0.1;
+	
+	
+		float x_min_arrow = 0.0;
+		float x_max_arrow = 0.0;
+	
+		if(j==0){ //j gives the direction of the intact proton
+			x_min_arrow = (center_arrow_x-size_x_arrow/2.);
+			x_max_arrow = (center_arrow_x+size_x_arrow/2.);
+		}else{
+			x_min_arrow = (center_arrow_x+size_x_arrow/2.);
+			x_max_arrow = (center_arrow_x-size_x_arrow/2.);
+		}
+	
+		TArrow *ar2 = new TArrow(x_min_arrow,center_arrow_y,x_max_arrow,center_arrow_y,0.02,"|>");
+   		ar2->SetAngle(40);
+   		ar2->SetLineWidth(2);
+   		ar2->Draw();
+   		
+   		TPaveText * Proton_text = new TPaveText(0.60,0.5,0.9,0.6,"NDC");
+		Proton_text->SetFillStyle(4050);
+		Proton_text->SetLineColor(0);
+		Proton_text->SetTextFont(42); Proton_text->SetTextSize(0.052); Proton_text->SetBorderSize(0);
+		Proton_text->AddText("Intact Proton dir.");
+		Proton_text->Draw();
+	}
+	///////////////////////////////////////////////////////////////////////////////
+
+
 
 	// lower plot will be in pad
+	///////////////////////////////////////////////////////////////////////////////
   	cancG0->cd();          // Go back to the main canvas before defining pad2
    	TPad *pad2 = new TPad("pad2", "pad2", 0, 0.05, 1, 0.25);
    	pad2->SetTopMargin(0);
@@ -250,15 +316,14 @@ int Plot()
 	ratio_hist_uncertainty->Draw("e2");
 	ratio_hist->Draw("ep same");
 	pad2->Update();
-	/*TH2C *hgrid = new TH2C("hgrid","",nBins,min_histo,max_histo,14,1.7,0.3);   
-   	hgrid->GetYaxis()->SetNdivisions(14);
-  	hgrid->Draw("same text");*/
+	
 
    	// Ratio plot (h3) settings
    	ratio_hist_uncertainty->SetTitle(""); // Remove the ratio title
 
    	// Y axis ratio plot settings
    	ratio_hist_uncertainty->GetYaxis()->SetTitle("Data/MC ratio");
+   	ratio_hist_uncertainty->GetXaxis()->SetTitle(xAxis_label);
    	ratio_hist_uncertainty->GetYaxis()->SetNdivisions(505);
    	ratio_hist_uncertainty->GetYaxis()->SetTitleSize(30);
    	ratio_hist_uncertainty->GetYaxis()->SetTitleFont(43);
@@ -278,12 +343,13 @@ int Plot()
 	legendR->Draw("same ");
 	legendR->SetFillStyle(0);
 	legendR->SetLineWidth(0);
+	///////////////////////////////////////////////////////////////////////////////
 
-	//cancG0->SaveAs(Form("pdfs/%s.pdf",label));
+	
 	cancG0->SaveAs("pdfs/"+label+cut_string+".pdf");
 	cancG0->SaveAs("pngs/"+label+cut_string+".png");
 	
-	//Data_hist->SaveAs("essai.root");
+	
 	
 	}
 	}
